@@ -1,130 +1,176 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown>
-					<textarea data-template>
-						## What happens when..
-					</textarea>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						![What happens when](https://user-images.githubusercontent.com/3349430/47525965-68381500-d896-11e8-84f9-2d117712b471.gif)
-					</textarea>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						## In the next 60 minutes:
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown>
+                    <textarea data-template>
+                        ## What happens when..
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ![What happens when](https://user-images.githubusercontent.com/3349430/47525965-68381500-d896-11e8-84f9-2d117712b471.gif)
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ## In the next 60 minutes:
 
-						We will ~~Learn~~ **Play with** 3 key internet technologies
-					</textarea>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-						## What do you think happens..
+                        We will ~~Learn~~ **Play with** 3 key technologies that make the internet work
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ## What do you think happens?
 
-						Write it on a post-it and put it inside the ☁️
-					</textarea>
-				</section>
-<!-- 			    <section data-markdown>
-				    <textarea data-template>
-				    	* Browser
-				    	* DNS - The phone book
-				    	*
+                        Write it down and stick it in the ☁️
+                    </textarea>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # DNS
 
-				    	* 'm' is pressed
-					    * Browser checks history, bookmarks etc. for all things starting with 'm'
-					    * 'Enter' is pressed
-					    * Browser checks if the term is a URL ("something"."something")
-					    * Browser checks HSTS list
-					    * DNS lookup
-				    </textarea>
-			    </section>
- -->			    <section data-markdown>
-				    <textarea data-template>
-					    * DNS lookup
-					    * Domain in cache? (chrome://net-internals/#dns)
-					    * If not, calls `gethostbyname`
-					    * OS checks if domain in local `hosts` file
-					    * If not, calls DNS server - typically router or ISP following ARP process
-				    </textarea>
-			    </section>
-			    <section data-markdown>
-				    <textarea data-template>
-					    ## DNS Exercise
-				    </textarea>
-			    </section>
-			    <section data-markdown>
-				    <textarea data-template>
-					    * Opening of socket - needs IP and port
-					    * SYN/ACK dance
-					    * TLS
-				    </textarea>
-			    </section>
-			    <section data-markdown>
-				    <textarea data-template>
-					    * TLS
-					    * Client sends `ClientHello`
-					    * Server returns `ServerHello` which includes amongst other things, server's public certificate signed by a CA that includes a public key
-					    * Client verifies certificate against list of trusted CAs
-					    * If yes, Diffie-Hellman key exchange
-				    </textarea>
-			    </section>
-			    <section data-markdown>
-				    <textarea data-template>
-					    ## Diffie-Hellman key exchange exercise
-				    </textarea>
-			    </section>
-			    <section data-markdown>
-				    <textarea data-template>
-					    * HTTP protocol
-					    * Stateless
-					    * Show server, cookies, malicious cookies
-				    </textarea>
-			    </section>
+                            Getting the address for a given name <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # DNS
 
-			</div>
-		</div>
+                            `$ dig +short mozilla.org`
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # DNS
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+                            `$ dig +trace mozilla.org`
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
-				]
-			});
-		</script>
-	</body>
+                            Communicating securely on an insecure medium <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            Can be done using ciphers <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            But how do you agree on keys? <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            * Split into groups of 3: Client, Server, Thief <!-- .element: class="fragment" -->
+                            * Server picks 🔴 🔵 <!-- .element: class="fragment" -->
+                            * Client picks ⚪ <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            * Server sends 🔴 to client <!-- .element: class="fragment" -->
+                            * Client mixes 🔴 + ⚪ <!-- .element: class="fragment" -->
+                            * Server mixes 🔴 + 🔵 <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            * Server sends 🔴 + 🔵 to client <!-- .element: class="fragment" -->
+                            * Client sends 🔴 + ⚪ to server <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            * Server mixes ( 🔴 + ⚪ ) + 🔵 <!-- .element: class="fragment" -->
+                            * Client mixes ( 🔴 + 🔵 ) + ⚪ <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Security
+
+                            * 🔴 + ⚪ + 🔵 is our secret key <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Scale
+
+                            Serving millions of users <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Scale
+
+                            Lets run a simple server <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+                ]
+            });
+        </script>
+    </body>
 </html>
