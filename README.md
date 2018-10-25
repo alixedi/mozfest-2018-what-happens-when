@@ -1,4 +1,4 @@
-What happens when..
+## What happens when..
 
 One of my favourite interview questions is: What happens when you type a mozilla.org in your browser's address bar?
 
