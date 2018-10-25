@@ -24,15 +24,87 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			    <section data-markdown>
-				    <textarea data-template>
-					    ## Page title
+				<section data-markdown>
+					<textarea data-template>
+						## What happens when..
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						![What happens when](https://user-images.githubusercontent.com/3349430/47525965-68381500-d896-11e8-84f9-2d117712b471.gif)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## In the next 60 minutes:
 
-					    A paragraph with some text and a [link](http://hakim.se).
+						We will ~~Learn~~ **Play with** 3 key internet technologies
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## What do you think happens..
+
+						Write it on a post-it and put it inside the ☁️
+					</textarea>
+				</section>
+<!-- 			    <section data-markdown>
+				    <textarea data-template>
+				    	* Browser
+				    	* DNS - The phone book
+				    	*
+
+				    	* 'm' is pressed
+					    * Browser checks history, bookmarks etc. for all things starting with 'm'
+					    * 'Enter' is pressed
+					    * Browser checks if the term is a URL ("something"."something")
+					    * Browser checks HSTS list
+					    * DNS lookup
 				    </textarea>
 			    </section>
+ -->			    <section data-markdown>
+				    <textarea data-template>
+					    * DNS lookup
+					    * Domain in cache? (chrome://net-internals/#dns)
+					    * If not, calls `gethostbyname`
+					    * OS checks if domain in local `hosts` file
+					    * If not, calls DNS server - typically router or ISP following ARP process
+				    </textarea>
+			    </section>
+			    <section data-markdown>
+				    <textarea data-template>
+					    ## DNS Exercise
+				    </textarea>
+			    </section>
+			    <section data-markdown>
+				    <textarea data-template>
+					    * Opening of socket - needs IP and port
+					    * SYN/ACK dance
+					    * TLS
+				    </textarea>
+			    </section>
+			    <section data-markdown>
+				    <textarea data-template>
+					    * TLS
+					    * Client sends `ClientHello`
+					    * Server returns `ServerHello` which includes amongst other things, server's public certificate signed by a CA that includes a public key
+					    * Client verifies certificate against list of trusted CAs
+					    * If yes, Diffie-Hellman key exchange
+				    </textarea>
+			    </section>
+			    <section data-markdown>
+				    <textarea data-template>
+					    ## Diffie-Hellman key exchange exercise
+				    </textarea>
+			    </section>
+			    <section data-markdown>
+				    <textarea data-template>
+					    * HTTP protocol
+					    * Stateless
+					    * Show server, cookies, malicious cookies
+				    </textarea>
+			    </section>
+
 			</div>
 		</div>
 
