@@ -104,55 +104,62 @@
                         <textarea data-template>
                             # Security
 
-                            Can be done using ciphers <!-- .element: class="fragment" -->
+                            <img src="https://user-images.githubusercontent.com/3349430/47566543-00301000-d924-11e8-9856-3501e4525698.png" alt="drawing" width="400"/>
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             # Security
 
-                            But how do you agree on keys? <!-- .element: class="fragment" -->
+                            How do you agree on a key? <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             # Security
 
-                            * Split into groups of 3: Client, Server, Thief <!-- .element: class="fragment" -->
-                            * Server picks 🔴 🔵 <!-- .element: class="fragment" -->
-                            * Client picks ⚪ <!-- .element: class="fragment" -->
+                            * Alice: 🔵 & ⚪ <!-- .element: class="fragment" -->
+                            * Bob: 🔴 <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             # Security
 
-                            * Server sends 🔴 to client <!-- .element: class="fragment" -->
-                            * Client mixes 🔴 + ⚪ <!-- .element: class="fragment" -->
-                            * Server mixes 🔴 + 🔵 <!-- .element: class="fragment" -->
+                            ⚡ Alice publishes ⚪ <!-- .element: class="fragment" -->
+
+                            * Alice: 🔵 & ⚪ <!-- .element: class="fragment" -->
+                            * Bob: 🔴 & ⚪ <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             # Security
 
-                            * Server sends 🔴 + 🔵 to client <!-- .element: class="fragment" -->
-                            * Client sends 🔴 + ⚪ to server <!-- .element: class="fragment" -->
+                            ⚡ Alice and Bob "mix" ⚪ with 🔵 & 🔴 <!-- .element: class="fragment" -->
+
+                            * Alice: 🔵 & ⚪🔵 <!-- .element: class="fragment" -->
+                            * Bob: 🔴 & ⚪🔴 <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             # Security
 
-                            * Server mixes ( 🔴 + ⚪ ) + 🔵 <!-- .element: class="fragment" -->
-                            * Client mixes ( 🔴 + 🔵 ) + ⚪ <!-- .element: class="fragment" -->
+                            ⚡ Alice and Bob exchange their "mix" <!-- .element: class="fragment" -->
+
+                            * Alice: 🔵 & ⚪🔴 <!-- .element: class="fragment" -->
+                            * Bob: 🔴 & ⚪🔵 <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                     <section data-markdown>
                         <textarea data-template>
                             # Security
 
-                            * 🔴 + ⚪ + 🔵 is our secret key <!-- .element: class="fragment" -->
+                            ⚡ Alice and Bob "mix" again <!-- .element: class="fragment" -->
+
+                            * Alice: 🔵⚪🔴 <!-- .element: class="fragment" -->
+                            * Bob: 🔴⚪🔵 <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                 </section>
@@ -168,7 +175,7 @@
                         <textarea data-template>
                             # Scale
 
-                            Lets run a simple server <!-- .element: class="fragment" -->
+                            Lets run a simple hello server <!-- .element: class="fragment" -->
                         </textarea>
                     </section>
                     <section data-markdown>
@@ -182,7 +189,21 @@
                         <textarea data-template>
                             # Scale
 
-                            How to keep state then?
+                            HTTP is stateless ➡️ Servers are fungible ➡️ Web can scale
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Scale
+
+                            But what if the server needs to remember you? <!-- .element: class="fragment" -->
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+                            # Scale
+
+                            ![Sessions](https://user-images.githubusercontent.com/3349430/47567689-2a370180-d927-11e8-9cc8-6b925b690bcd.gif)
                         </textarea>
                     </section>
 
@@ -191,9 +212,13 @@
                             ![Cookie server](https://user-images.githubusercontent.com/3349430/47533468-c1f70a00-d8ab-11e8-9874-3ccb84740030.gif)
                         </textarea>
                     </section>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        # The End
 
-
-
+                        ? <!-- .element: class="fragment" -->
+                    </textarea>
                 </section>
             </div>
         </div>
