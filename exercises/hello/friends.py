@@ -56,7 +56,7 @@ result_template = Template('''
 
 
 @app.route('/')
-def index():
+def hello():
     name = request.cookies.get('name')
     if name:
         return base_template.substitute(

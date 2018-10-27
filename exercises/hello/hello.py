@@ -56,7 +56,7 @@ form = '''
 
 
 @app.route('/', methods=('GET', 'POST'))
-def index():
+def hello():
     if request.method == 'GET':
         return base_template.substitute(content=form)
     else:
@@ -66,26 +66,3 @@ def index():
                 content=name
             )
         )
-
-
-@app.route('/cookie', methods=('GET', 'POST'))
-def index_cookie():
-    if request.method == 'GET':
-        if request.cookies.get('name'):
-            return base_template.substitute(
-                content=result_template.substitute(
-                    content=name
-                )
-            )
-        return base_template.substitute(content=form)
-    else:
-        name = request.form.get('name')
-        resp = make_response(
-            base_template.substitute(
-                content=result_template.substitute(
-                    content=name
-                )
-            )
-        )
-        resp.set_cookie('name', name)
-        return resp
