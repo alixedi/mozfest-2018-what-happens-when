@@ -43,7 +43,7 @@ base_template = Template('''
 result_template = Template('''
     <textarea rows="40" cols="80">
         $content
-    <textarea>
+    </textarea>
 ''')
 
 form = '''
@@ -58,7 +58,11 @@ def index():
         return base_template.substitute(content=form)
     else:
         cli = 'dig ' + request.form.get('dig')
-        result = check_output(cli.split())
+        try:
+            result = check_output(cli.split())
+        except Exception as e:
+            app.logger.error(e)
+            result = b'Something went wrong :('
         return base_template.substitute(
             content=result_template.substitute(
                 content=result.decode('utf-8')
